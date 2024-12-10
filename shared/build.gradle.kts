@@ -2,18 +2,19 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.kotlinComposeCompiler)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
 }
 
 kotlin {
+    jvmToolchain(11)
     androidTarget {
         compilations.all {
             compileTaskProvider.configure {
                 compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_1_8)
+                    jvmTarget.set(JvmTarget.JVM_11)
                 }
             }
         }
@@ -43,8 +44,8 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.jetbrains.androidx.lifecycle.viewmodel)
+            implementation(libs.jetbrains.androidx.lifecycle.runtime.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -54,17 +55,17 @@ kotlin {
 
 android {
     namespace = "com.example.hellokmpdemo"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 29
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
-dependencies {
-    implementation(libs.androidx.material3.android)
-    debugImplementation(compose.uiTooling)
-}
+//dependencies {
+//    implementation(libs.androidx.compose.material3.android)
+//    debugImplementation(compose.uiTooling)
+//}

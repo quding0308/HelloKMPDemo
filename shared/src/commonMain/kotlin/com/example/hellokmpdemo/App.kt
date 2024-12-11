@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -41,7 +42,31 @@ class Greeting {
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
+
     LazyColumn {
+        item {
+            val openAlertDialog = remember { mutableStateOf(false) }
+
+            Button(onClick = {
+                openAlertDialog.value = true
+            }) {
+                Text("展示 Dialog")
+            }
+
+            when {
+                openAlertDialog.value -> {
+                    AlertDialogExample(
+                        onDismissRequest = { openAlertDialog.value = false },
+                        onConfirmation = {
+                            openAlertDialog.value = false
+                            println("Confirmation registered") // Add logic here to handle confirmation.
+                        },
+                        dialogTitle = "Alert dialog example",
+                        dialogText = "This is an example of an alert dialog with buttons.",
+                    )
+                }
+            }
+        }
         item {
             CustomTextView(Greeting().greet())
             CustomTextView("从资源读取：" + stringResource(Res.string.app_name))

@@ -46,6 +46,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.androidx.lifecycle.viewmodel)
             implementation(libs.jetbrains.androidx.lifecycle.runtime.compose)
+            implementation("network.chaintech:compose-multiplatform-media-player:1.0.27")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

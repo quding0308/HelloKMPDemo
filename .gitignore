@@ -1,3 +1,6 @@
+iosApp/Pods/
+iosApp/Podfile.lock
+
 *.iml
 .kotlin
 .gradle
@@ -16,5 +19,3 @@ captures
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
-iosApp/Pods/*
-iosApp/Podfile.lock

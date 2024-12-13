@@ -2,6 +2,7 @@ package com.example.hellokmpdemo
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -42,29 +43,35 @@ class Greeting {
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
+    kotlinStudy()
 
     LazyColumn {
         item {
             val openAlertDialog = remember { mutableStateOf(false) }
 
-            Button(onClick = {
-                openAlertDialog.value = true
-            }) {
-                Text("展示 Dialog")
+            LaunchedEffect(Unit) {
+                println("LaunchedEffect")
             }
 
-            when {
-                openAlertDialog.value -> {
-                    AlertDialogExample(
-                        onDismissRequest = { openAlertDialog.value = false },
-                        onConfirmation = {
-                            openAlertDialog.value = false
-                            println("Confirmation registered") // Add logic here to handle confirmation.
-                        },
-                        dialogTitle = "Alert dialog example",
-                        dialogText = "This is an example of an alert dialog with buttons.",
-                    )
+            Button(modifier = Modifier.padding(50.dp),onClick = {
+                openAlertDialog.value = true
+            }) {
+                Column {
+                    Text("展示 Dialog")
+                    Text("展示 Dialog")
                 }
+            }
+
+            if (openAlertDialog.value) {
+                AlertDialogExample(
+                    onDismissRequest = { openAlertDialog.value = false },
+                    onConfirmation = {
+                        openAlertDialog.value = false
+                        println("Confirmation registered") // Add logic here to handle confirmation.
+                    },
+                    dialogTitle = "Alert dialog example",
+                    dialogText = "This is an example of an alert dialog with buttons.",
+                )
             }
         }
         item {

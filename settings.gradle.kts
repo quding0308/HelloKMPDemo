@@ -20,4 +20,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "HelloKMPDemo"
 include(":androidApp")
+include(":kmp_lib")
 include(":shared")

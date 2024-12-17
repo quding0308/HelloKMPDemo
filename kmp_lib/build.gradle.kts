@@ -37,10 +37,6 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-//            implementation(projects.shared)
-
-            implementation(projects.kmpLib)
-
             //put your multiplatform dependencies here
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -59,12 +55,12 @@ kotlin {
 
 compose.resources {
     publicResClass = true
-    packageOfResClass = "shared.generated.resources"
+    packageOfResClass = "kmp_lib.generated.resources"
     generateResClass = auto
 }
 
 android {
-    namespace = "com.example.hellokmpdemo"
+    namespace = "com.example.kmplib"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

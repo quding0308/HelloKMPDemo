@@ -1,7 +1,4 @@
-package com.example.hellokmpdemo
-
-import com.example.kmplib.KmpGreeting
-import com.example.kmplib.kmpGetPlatform
+package com.example.kmplib
 
 class AndroidPlatform : Platform {
     override val name: String = "Android === ${android.os.Build.VERSION.SDK_INT}"
@@ -9,8 +6,4 @@ class AndroidPlatform : Platform {
 
 actual fun getPlatform(): Platform = AndroidPlatform()
 
-fun hello() {
-    kmpGetPlatform()
-
-    KmpGreeting()
-}
+fun kmpGetPlatform(): Platform = AndroidPlatform()

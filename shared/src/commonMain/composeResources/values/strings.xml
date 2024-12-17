@@ -1,0 +1,4 @@
+<resources>
+    <string name="cast_skill">释放了技能</string>
+    <string name="gain_permanent_debuff">获得了永久减益</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="kmp_cast_skill">释放了技能</string>
+    <string name="kmp_gain_permanent_debuff">获得了永久减益</string>
+    <string name="kmp_lib_name">获得了永久减益kmp_lib</string>
+</resources>

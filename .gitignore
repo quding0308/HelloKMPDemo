@@ -1,3 +1,6 @@
+iosApp/Pods/
+iosApp/Podfile.lock
+
 *.iml
 .kotlin
 .gradle

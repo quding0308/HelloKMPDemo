@@ -1,4 +1,11 @@
 <resources>
+
     <string name="cast_skill">释放了技能</string>
     <string name="gain_permanent_debuff">获得了永久减益</string>
+
+    <string name="app_name">应用名字</string>
+    <string name="network_error">网络异常</string>
+    <string name="quit_event_content">退出事件会导致事件失败。</string>
+    <string name="quit_event_title">确认退出事件？</string>
+
 </resources>

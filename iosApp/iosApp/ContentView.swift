@@ -5,6 +5,9 @@ import shared
 struct ContentView: View {
 //	let greet = Greeting().greet()
     
+    
+    let kotlinObj = MyKotlinClass11()
+    
 	var body: some View {
         ComposeLayer()
 	}

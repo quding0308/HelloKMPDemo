@@ -33,6 +33,15 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
+
+        // 文档 https://kotlinlang.org/docs/native-cocoapods-libraries.html
+//        pod("FirebaseAuth") {
+//            version = "10.16.0"
+//        }
+        pod("SnapKit") {
+            version = "5.7.1"
+            extraOpts += listOf("-compiler-option", "-fmodules")
+        }
     }
     
     sourceSets {
@@ -50,6 +59,15 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.androidx.lifecycle.viewmodel)
             implementation(libs.jetbrains.androidx.lifecycle.runtime.compose)
+            implementation(libs.ktor.client.core)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation("network.chaintech:compose-multiplatform-media-player:1.0.27")
+        }
+        androidMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

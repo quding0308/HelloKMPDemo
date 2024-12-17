@@ -1,6 +1,6 @@
 package com.example.hellokmpdemo
 
-import hellokmpdemo.shared.generated.resources.Res
+import shared.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import platform.Foundation.NSBundle
 

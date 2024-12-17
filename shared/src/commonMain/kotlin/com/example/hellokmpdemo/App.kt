@@ -19,29 +19,23 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-<<<<<<< HEAD
-import com.example.kmplib.KmpGreeting
-import org.jetbrains.compose.resources.stringResource
 
-import kmp_lib.generated.resources.Res as KmpLibRes
-import kmp_lib.generated.resources.kmp_lib_name
-
-import shared.generated.resources.Res
-import shared.generated.resources.cast_skill
-=======
 import chaintech.videoplayer.model.AudioFile
 import chaintech.videoplayer.model.PlayerConfig
 import chaintech.videoplayer.ui.audio.AudioPlayerComposable
 import chaintech.videoplayer.ui.video.VideoPlayerComposable
-import hellokmpdemo.shared.generated.resources.Res
-import hellokmpdemo.shared.generated.resources.app_name
-import hellokmpdemo.shared.generated.resources.attack1_5
-import hellokmpdemo.shared.generated.resources.bg_1
-import hellokmpdemo.shared.generated.resources.bg_event_48
+
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
->>>>>>> 71c71967020068a371252c6b4272c7319bad422f
+import shared.generated.resources.Res
+import shared.generated.resources.app_name
+import shared.generated.resources.attack1_5
+import shared.generated.resources.bg_1
+import shared.generated.resources.bg_event_48
+
+import kmp_lib.generated.resources.Res as KmpLibRes
+import kmp_lib.generated.resources.kmp_lib_name
 
 class Greeting {
     private val platform: Platform = getPlatform()
@@ -54,14 +48,6 @@ class Greeting {
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
-<<<<<<< HEAD
-
-    Column {
-        InnerGreetingView(Greeting().greet())
-        InnerGreetingView(KmpGreeting().greet())
-        InnerGreetingView(text = stringResource(Res.string.cast_skill))
-        InnerGreetingView(text = stringResource(KmpLibRes.string.kmp_lib_name))
-=======
     kotlinStudy()
 
     LazyColumn {
@@ -94,6 +80,8 @@ fun App() {
             }
         }
         item {
+            CustomTextView(Greeting().greet())
+            CustomTextView(stringResource(KmpLibRes.string.kmp_lib_name))
             CustomTextView(Greeting().greet())
             CustomTextView("从资源读取：" + stringResource(Res.string.app_name))
         }
@@ -167,7 +155,6 @@ fun App() {
                 )
             )
         }
->>>>>>> 71c71967020068a371252c6b4272c7319bad422f
     }
 }
 

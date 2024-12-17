@@ -46,8 +46,7 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-//            implementation(projects.shared)
-
+            // projects
             implementation(projects.kmpLib)
 
             //put your multiplatform dependencies here
